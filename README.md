@@ -10,10 +10,10 @@ For confidentiality reasons, the original codes and data used in our experiments
 (1)	cuda 11.6.112
 (2)	python 3.8.13  
 (3)	pytorch 1.12.0  
-(4)	tianshou 0.4.11
-(5)   dgl 0.9.1
-(6)   gym 0.25.2
-(7)   tensorboard 2.10.0
+(4)	tianshou 0.4.11 
+(5)   dgl 0.9.1 
+(6)   gym 0.25.2 
+(7)   tensorboard 2.10.0 
 
 The code is tested on Intel Core i9-10980XE CPU, 128GB memory, and NVIDIA GeForce RTX 3090 GPU. 
 
