@@ -33,11 +33,11 @@ The folder "all_eval_data" contains all public evaluation part graphs.
 ## Citation
 If you use this code please cite:  
 ```
-@inproceedings{zhang2022asin,  
-      title={Machining feature recognition based on a novel multi-task deep learning network},  
-      author={Hang Zhang, Shusheng Zhang, Yajun Zhang, Jiachen Liang, and Zhen Wang},  
-      booktitle={Robotics and Computer-Integrated Manufacturing},  
-      year={2022}  
+@inproceedings{  
+      title={A novel method for intersecting machining feature segmentation via deep reinforcement learning},  
+      author={Hang Zhang, Wenhu Wang, Shusheng Zhang, Yajun Zhang, Jingtao Zhou, Zhen Wang, Bo Huang, and Rui Huang},  
+      booktitle={Advanced Engineering Informatics},  
+      year={2023}  
     }
 ``` 
 If you have any questions about the code, please feel free to contact me (1226152137@qq.com).
