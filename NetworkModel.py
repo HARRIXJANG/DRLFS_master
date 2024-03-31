@@ -53,13 +53,20 @@ class Actor_Net_PNAConv_Model(nn.Module):
     def forward(self, obs, state = None, info = {}):
         GraphDatas = GraphDataset(obs)
         GraphLoader = GraphDataLoader(GraphDatas, batch_size=obs.shape[0])
-        k = 0
-        for Graphs in GraphLoader:
-            gs = Graphs
-            ns = th.tensor(Graphs.ndata["NodeAttr"][:,:-1], dtype=th.float32)
-            ns_s = th.tensor(Graphs.ndata["NodeAttr"][:,-1], dtype=th.float32)
-            es = th.tensor(Graphs.edata["EdgeAttr"], dtype=th.float32)
-            if k == 0: break
+        GraphLoader_iter = iter(GraphLoader)
+        
+        gs = next(GraphLoader_iter)[0]
+        ns = th.tensor(Graphs.ndata["NodeAttr"][:,:-1], dtype=th.float32)
+        ns_s = th.tensor(Graphs.ndata["NodeAttr"][:,-1], dtype=th.float32)
+        es = th.tensor(Graphs.edata["EdgeAttr"], dtype=th.float32)
+        
+        # k = 0
+        # for Graphs in GraphLoader:
+        #     gs = Graphs
+        #     ns = th.tensor(Graphs.ndata["NodeAttr"][:,:-1], dtype=th.float32)
+        #     ns_s = th.tensor(Graphs.ndata["NodeAttr"][:,-1], dtype=th.float32)
+        #     es = th.tensor(Graphs.edata["EdgeAttr"], dtype=th.float32)
+        #     if k == 0: break
 
         n_feat_1 = self.PNAConvModule_1(gs, ns, es)
         n_feat_2 = self.PNAConvModule_2(gs, n_feat_1, es)
