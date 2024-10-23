@@ -358,7 +358,12 @@ class Tool_Direction:
         self.face_normals = th.tensor(face_normals).to(device)
         self.sphere_points = SpherePoints.to(device)
 
-
+    '''
+    If the angle between the normal vector in the sphere and the normal vector 
+    of the face is less than 90 degrees, it is considered that the direction
+    of the normal vector in the sphere can be used as the direction for machining 
+    the face.(Only for plane)
+    '''
     def judge_tool_cover(self, tolerance = 0.05):
         judge_matrix = self.face_normals.mm(self.sphere_points)
 
